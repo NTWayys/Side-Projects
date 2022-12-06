@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@600&display=swap");
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.hangman {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+  }
+}
+
+.drawing {
+  margin-top: 2rem;
+  position: relative;
+  .top-bar {
+    margin-left: 35%;
+    height: 1rem;
+    width: 10rem;
+    background: white;
+  }
+  .hanging-bar {
+    height: 2.5rem;
+    width: 0.5rem;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 0.5rem);
+  }
+  .center-bar {
+    margin-left: 35%;
+    width: 1rem;
+    height: 17rem;
+    background: white;
+  }
+  .bottom-bar {
+    height: 1rem;
+    width: 14rem;
+    background: white;
+  }
+
+  .man {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    transform: translate(60%, 0);
+    height: 10rem;
+    width: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .head {
+      width: 3.5rem;
+      height: 3.5rem;
+      background: white;
+      border-radius: 50%;
+    }
+    .body {
+      width: 1rem;
+      height: 6rem;
+      margin-top: -0.1rem;
+      background: white;
+    }
+
+    .arm {
+      background: white;
+      width: 1rem;
+      height: 4rem;
+      position: absolute;
+      bottom: 3rem;
+      transform-origin: bottom center;
+      left: 45%;
+      transform: rotate(-60deg);
+    }
+    .right-arm {
+      transform: rotate(60deg);
+    }
+    .leg {
+      background: white;
+      width: 1rem;
+      height: 5rem;
+      position: absolute;
+      bottom: -3.5rem;
+      transform-origin: top center;
+      left: 44%;
+      transform: rotate(25deg);
+    }
+    .right-leg {
+      transform: rotate(-25deg);
+    }
+  }
+}
+
+.user-word {
+  font-family: "Azeret Mono", monospace;
+  margin-top: 1rem;
+  font-size: 6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  flex-wrap: wrap;
+  .letter {
+    margin-left: 1rem;
+    border-bottom: 0.5rem solid white;
+    > span {
+      display: inline-block;
+      visibility: hidden;
+    }
+    .visible {
+      visibility: visible;
+    }
+  }
+}
+.letters {
+  max-width: 45rem;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+
+  .letter {
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid white;
+    background: transparent;
+    height: 3rem;
+    width: 3rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    &:hover,
+    &:focus {
+      background: white;
+      color: black;
+    }
+  }
+}
+
+.endgame {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .gameover {
+    margin: 0 auto;
+
+    font-size: 5rem;
+    color: red;
+  }
+  .win {
+    color: greenyellow !important;
+  }
+
+  .reset-btns {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    .reset-btn {
+      all: none;
+      cursor: pointer;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0.25rem solid white;
+      font-size: 2rem;
+      font-weight: 600;
+      height: 4rem;
+      width: 15rem;
+      &:focus,
+      &:hover {
+        background: white;
+        color: black;
+      }
+    }
+  }
+}
